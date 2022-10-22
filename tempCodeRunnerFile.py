@@ -1,1 +1,0 @@
-StepBtn.pack(side=LEFT, pady=20)
