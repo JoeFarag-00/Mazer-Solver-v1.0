@@ -1,5 +1,6 @@
 from tkinter import *
 import time
+from turtle import bgcolor
 
 root = Tk()
 root.title('Manyoon Maze')
@@ -36,7 +37,7 @@ class Create_Maze():
         start = self.position
         self.Cstart_Stat = 1
         self.button_obj.configure(bg='green3')
-
+        StepBtn.configure(bg='red',text='End')
         for node in GridList.values():
             if node.position != start:
                 node.start = 0
@@ -52,7 +53,7 @@ class Create_Maze():
             End = self.position
             self.CEnd_Stat = 1
             self.button_obj.configure(bg='red')
-
+            StepBtn.configure(bg='grey', fg='white',text='Add Walls')
             for node in GridList.values():
                 if (node.position != End) and (node.position != start):
                     node.goal = 0
@@ -63,6 +64,7 @@ class Create_Maze():
 
         if self.Cstart_Stat == 0 and self.CEnd_Stat == 0:
             self.Cwall_Stat = (self.Cwall_Stat+1) % 2
+            StepBtn.configure(bg='light blue', fg='black',text='visualize')
             if self.Cwall_Stat == 0:
                 self.button_obj.configure(bg='white')
             else:
@@ -120,11 +122,12 @@ start = None
 End = None
 
 Btn1 = Frame(root)
-label = Label(Btn1, text='Choose a Start position')
-label.pack(side=TOP)
-StepBtn = Button(Btn1, text='Start', width=10, height=3, bg="green2" ,command=Fill_Maze_GUI)
-StepBtn.place(x=100,y=20)
-StepBtn.pack(pady=10)
+label = Label(Btn1, text='WELCOME TO MAZE PATHFINDING VISUALIZER')
+label.config(font=('Arial', 26))
+label.pack(side=TOP, pady=5)
+StepBtn = Button(Btn1, text='Start', width=20, height=3, bg="green2" ,command=Fill_Maze_GUI, font=('Arial', 10))
+# StepBtn.place(x=1000,y=20)
+StepBtn.pack(pady=8)
 Btn1.pack()
 
 # Btn2 = Frame(root)
