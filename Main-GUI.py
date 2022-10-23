@@ -1,6 +1,5 @@
 from tkinter import *
 import time
-from turtle import bgcolor
 
 root = Tk()
 root.title('Manyoon Maze')
@@ -121,16 +120,29 @@ Maze_Status = 0
 start = None
 End = None
 
-Btn1 = Frame(root)
-label = Label(Btn1, text='WELCOME TO MAZE PATHFINDING VISUALIZER')
+
+
+label = Label(text='WELCOME TO MAZE PATHFINDING VISUALIZER')
 label.config(font=('Arial', 26))
 label.pack(side=TOP, pady=5)
-StepBtn = Button(Btn1, text='Start', width=20, height=3, bg="green2" ,command=Fill_Maze_GUI, font=('Arial', 10))
-# StepBtn.place(x=1000,y=20)
-StepBtn.pack(pady=8)
-Btn1.pack()
 
-# Btn2 = Frame(root)
+Btn_Type = Frame(root)
+
+StepBtn = Button(Btn_Type, text='Start', width=20, height=3, bg="green2",command=Fill_Maze_GUI, font=('Arial', 10))
+StepBtn.grid(row=1,column=0)
+# StepBtn.pack(side=LEFT,pady=4)
+# Btn1.pack() 
+
+btn2=Button(Btn_Type,text='DFS',width=20, height=3)
+btn2.grid(row=1,column=1)
+# test.pack(side=LEFT, pady=4)
+# Btn2.pack()
+
+btn3=Button(Btn_Type,text='BFS',width=20, height=3)
+btn3.grid(row=1,column=2)
+# test.pack(side=LEFT, pady=4)
+# Btn3.pack()
+
 # label = Label(Btn2, text='Choose an Algorithim')
 # label.pack(side=TOP)
 # AlgoBtn = Button(Btn2, text='NEXT', width=10, height=3, bg="green2" ,command=Fill_Maze_GUI)
