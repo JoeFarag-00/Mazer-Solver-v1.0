@@ -116,11 +116,11 @@ def GuidPath_Color(path):
         GridList[node].button_obj.configure(bg='green')
         
 def Reset_Window():
-    # root.destroy()
+    root.destroy()
+    os.system('Main-GUI.py')
     # root.mainloop()
-    os.execl(sys.executable, sys.executable, *sys.argv)
+    #os.execl(sys.executable, sys.executable, *sys.argv)
 
-    
 def Start_BFS():
     global Algo_Stat
     Algo_Stat=1
